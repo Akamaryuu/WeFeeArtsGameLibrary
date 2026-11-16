@@ -61,7 +61,12 @@
   fetch('data/games.json')
     .then(function(r){ return r.json(); })
     .then(function(data){
-      games=data;
+      games=Array.isArray(data)?data:(data.games||[]);
+      var upd=document.getElementById('updated');
+      if(upd && data.updated){
+        var p=data.updated.split('-');
+        upd.textContent=(p.length===3)?(p[0]+'年'+Number(p[1])+'月'+Number(p[2])+'日'):data.updated;
+      }
       var total=games.reduce(function(s,g){ return s+g.playtime_hours; },0);
       hours.textContent=Math.round(total).toLocaleString();
       loading.hidden=true;

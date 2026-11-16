@@ -34,6 +34,7 @@ h1{font-size:1.4rem;color:#eaf6ff;letter-spacing:.06em}
 .sort select{background:var(--panel);color:var(--ink);border:1px solid var(--line);
   border-radius:6px;padding:6px 8px;font-size:.9rem}
 .count{color:var(--sub);font-size:.9rem}
+.updated{color:var(--sub);font-size:.8rem;margin-top:-6px}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
 .card{background:var(--panel2);border:1px solid var(--line);border-radius:10px;overflow:hidden;
   box-shadow:0 4px 14px rgba(0,0,0,.35)}

@@ -25,6 +25,7 @@ title: ""
 </div>
 
 <p class="count"><span id="count">…</span> 件 ／ 総プレイ時間 <span id="hours">…</span> 時間</p>
+<p class="updated">最終更新: <span id="updated">…</span>（Steamライブラリのスナップショット）</p>
 
 <div class="cards" id="cards"></div>
 
