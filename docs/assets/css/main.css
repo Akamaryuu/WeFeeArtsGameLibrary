@@ -1,4 +1,5 @@
 :root{
+  color-scheme:light dark;
   --bg:#070d1a; --panel:#0e1626; --panel2:#111c31; --ink:#dbe7f5;
   --sub:#8496ad; --accent:#39c2d7; --accent2:#7ee0f0; --line:#22334f;
 }
@@ -49,3 +50,60 @@ h1{font-size:1.4rem;color:#eaf6ff;letter-spacing:.06em}
 .badge.unplayed{border-color:#8a6d2f;color:#e5c15c}
 .empty{color:var(--sub);text-align:center;padding:24px 0}
 .site-footer{border-top:1px solid var(--line);padding:16px 0 28px;color:var(--sub);font-size:.9rem;text-align:center}
+
+/* ライトテーマ（端末設定に自動追従） — 昼のステーション */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#eef4fa; --panel:#ffffff; --panel2:#ffffff; --ink:#1d2c3f;
+    --sub:#5f738c; --accent:#0e7f96; --accent2:#0a6d99; --line:#c3d5e6;
+    color-scheme:light;
+  }
+  body{background:linear-gradient(180deg,#dceefc,#eef4fa)}
+  .site-header{background:linear-gradient(180deg,rgba(14,127,150,.10),rgba(14,127,150,0))}
+  .site-title{color:#0d3552}
+  h1{color:#0d3552}
+  #q{color:var(--ink)}
+  .chip.is-active{color:#fff}
+  .card{box-shadow:0 4px 14px rgba(31,68,102,.14)}
+  .card img{background:#dbe7f2}
+  .badge.unplayed{border-color:#a8842f;color:#8a6d1f}
+}
+
+/* テーマ切り替えボタン＋手動指定（端末設定より優先） */
+.theme-toggle{position:fixed;right:14px;bottom:14px;z-index:50;width:44px;height:44px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:1.15rem;cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,.3)}
+:root[data-theme="light"]{
+  --bg:#eef4fa; --panel:#ffffff; --panel2:#ffffff; --ink:#1d2c3f;
+  --sub:#5f738c; --accent:#0e7f96; --accent2:#0a6d99; --line:#c3d5e6;
+}
+[data-theme="light"] body{background:linear-gradient(180deg,#dceefc,#eef4fa)}
+[data-theme="light"] .site-header{background:linear-gradient(180deg,rgba(14,127,150,.10),rgba(14,127,150,0))}
+[data-theme="light"] .site-title{color:#0d3552}
+[data-theme="light"] h1{color:#0d3552}
+[data-theme="light"] .chip.is-active{color:#fff}
+[data-theme="light"] .card{box-shadow:0 4px 14px rgba(31,68,102,.14)}
+[data-theme="light"] .card img{background:#dbe7f2}
+[data-theme="light"] .badge.unplayed{border-color:#a8842f;color:#8a6d1f}
+:root[data-theme="dark"]{
+  --bg:#070d1a; --panel:#0e1626; --panel2:#111c31; --ink:#dbe7f5;
+  --sub:#8496ad; --accent:#39c2d7; --accent2:#7ee0f0; --line:#22334f;
+}
+[data-theme="dark"] body{
+  background:
+    radial-gradient(1px 1px at 12% 22%,#fff 50%,transparent 51%),
+    radial-gradient(1px 1px at 68% 8%,#cfe8ff 50%,transparent 51%),
+    radial-gradient(1.5px 1.5px at 84% 34%,#fff 50%,transparent 51%),
+    radial-gradient(1px 1px at 38% 64%,#9fc6ee 50%,transparent 51%),
+    radial-gradient(1px 1px at 55% 88%,#fff 50%,transparent 51%),
+    radial-gradient(1.5px 1.5px at 25% 92%,#cfe8ff 50%,transparent 51%),
+    linear-gradient(180deg,#0a1224,#070d1a);
+  background-attachment:fixed;
+}
+[data-theme="dark"] .site-header{background:linear-gradient(180deg,rgba(57,194,215,.10),rgba(57,194,215,0))}
+[data-theme="dark"] .site-title{color:#eaf6ff}
+[data-theme="dark"] h1{color:#eaf6ff}
+[data-theme="dark"] .chip.is-active{color:#06222b}
+[data-theme="dark"] .card{box-shadow:0 4px 14px rgba(0,0,0,.35)}
+[data-theme="dark"] .card img{background:#0a1224}
+[data-theme="dark"] .badge.unplayed{border-color:#8a6d2f;color:#e5c15c}
